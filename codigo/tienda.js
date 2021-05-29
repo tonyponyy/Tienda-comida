@@ -32,7 +32,7 @@ var decrementar=(num)=>{
 }
 
 var cesta=(num)=> {
-    comprobar_producto(num);
+    añadir_producto(num);
     actualiza_cesta();
     actualiza_total();
     guardar_cesta();
@@ -55,7 +55,7 @@ var quitar_producto=(id)=>{
 }
 
 
-var comprobar_producto=(id)=>{
+var añadir_producto=(id)=>{
     for (let i = 0; i < contenido_cesta.length; i++) {
         if (contenido_cesta[i].id == id ){
             contenido_cesta[i].unidades++;
