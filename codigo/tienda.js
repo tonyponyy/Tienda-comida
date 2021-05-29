@@ -10,20 +10,66 @@ var productos =[
     ["sandia",2.2],["pollo",3.5],["papel higienico",3],
     ["pizza congelada",1.80],["huevos",2],["harina",0.90]
 ];
+
+class Producto {
+    constructor(id) {
+      this.id = id;
+      this.nombre = productos[id-1][0];
+      this.precio = productos[id-1][1];
+      this.unidades = 1;
+    }
+  }
+
+
+
 var contenido_cesta=[];
 
 var decrementar=(num)=>{
-    contenido_cesta[num]--;
+    quitar_producto(num);
     actualiza_cesta();
     actualiza_total();
     guardar_cesta();
 }
 
 var cesta=(num)=> {
-    contenido_cesta[num-1]++;
+    comprobar_producto(num);
     actualiza_cesta();
     actualiza_total();
     guardar_cesta();
+}
+
+var quitar_producto=(id)=>{
+    for (let i = 0; i < contenido_cesta.length; i++) {
+        if (contenido_cesta[i].id == id ){
+            contenido_cesta[i].unidades-- ;
+            if (contenido_cesta[i].unidades < 1){
+                contenido_cesta.splice(i, 1);
+                return true;
+            }
+            //  copiamos el objeto, lo eliminamos y lo subimos a la primera posición.
+            let objeto = contenido_cesta[i];
+            contenido_cesta.splice(i, 1);
+            contenido_cesta.unshift(objeto);
+        }
+    }
+}
+
+
+var comprobar_producto=(id)=>{
+    for (let i = 0; i < contenido_cesta.length; i++) {
+        if (contenido_cesta[i].id == id ){
+            contenido_cesta[i].unidades++;
+            //  copiamos el objeto, lo eliminamos y lo subimos a la primera posición.
+            let objeto = contenido_cesta[i];
+            contenido_cesta.splice(i, 1);
+            contenido_cesta.unshift(objeto);
+            //hacemos un return para acabar la función.
+            return true;
+        }
+    }
+    var productoNuevo = new Producto(id);
+    console.log("llega aqui")
+    contenido_cesta.unshift(productoNuevo);
 }
 
 var actualiza_cesta=()=>{
@@ -32,9 +78,9 @@ var actualiza_cesta=()=>{
         document.getElementById("lista").innerHTML="";
 
         for (let i = 0; i < contenido_cesta.length; i++) {
-            if (contenido_cesta[i] !=0){
-                document.getElementById("lista").innerHTML += contenido_cesta[i]+" "+productos[i][0]+" "+ (contenido_cesta[i]*productos[i][1]).toFixed(2)+"€ <button type='button' class='btn btn-danger' onclick='decrementar("+i+")'>X</button><br>";
-            }  
+            
+                document.getElementById("lista").innerHTML += contenido_cesta[i].unidades+" "+contenido_cesta[i].nombre+" "+ (contenido_cesta[i].unidades*contenido_cesta[i].precio).toFixed(2)+"€ <button type='button' class='btn btn-danger' onclick='decrementar("+contenido_cesta[i].id+")'>X</button><br>";
+             
         }
     }
 }
@@ -42,7 +88,7 @@ var actualiza_cesta=()=>{
 var actualiza_total=()=>{
     let total=0;
     for (let i = 0; i < contenido_cesta.length; i++) {
-        total +=contenido_cesta[i]*productos[i][1];
+        total +=contenido_cesta[i].unidades*contenido_cesta[i].precio;
     }
     document.getElementById("total").innerHTML= total.toFixed(2)+" €"
 }
@@ -57,6 +103,6 @@ var recuperar_cesta=()=>{
         let datos_recuperados = sessionStorage.getItem("cesta_guardada");
         contenido_cesta= JSON.parse(datos_recuperados); 
         console.log("hay datos")
-        }else contenido_cesta=[0,0,0,0,0,0,0,0,0,0,0,0];
+        }else contenido_cesta=[];
     
   }
