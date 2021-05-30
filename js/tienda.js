@@ -8,10 +8,10 @@ window.onload = ()=>{
 var contenido_cesta=[];
 //array donde se guarda el nombre y el precio de cada uno de los productos
 var productos =[
-    ["manzana",1.50],["leche",1.45],["garbanzos",0.78],
-    ["arroz",0.60],["spaguettis",0.75],["detergente",3.3],
-    ["sandia",2.2],["pollo",3.5],["papel higienico",3],
-    ["pizza congelada",1.80],["huevos",2],["harina",0.90]
+    ["Apples",1.50],["Milk",1.54],["Chickpeas",2.65],
+    ["Cleaner",1.90],["Rice",2.00],["Spaghetti",1.4],
+    ["Watermelon",2.18],["Chicken",3.4],["Toilet paper",2.18],
+    ["Frozen pizza",3.40],["Eggs",2.18],["Flour",3.40]
 ];
 // constructor donde pasamos por parametro el id del producto y nos crea el producto con su nombre y su precio, y una cantidad por defecto de 1
 class Producto {
@@ -90,10 +90,11 @@ var actualiza_cesta=()=>{
         for (let i = 0; i < contenido_cesta.length; i++) {
             //recuperamos e imprimimos las unidades del producto + el nombre+ el total del producto y añadimos un boton para eliminar 
             //el producto, que llamará desde el HTML a la función decrementar con el id del mismo producto.
-                document.getElementById("lista").innerHTML +=
-                 contenido_cesta[i].unidades+" "+contenido_cesta[i].nombre+" "+
+                document.getElementById("lista").innerHTML += "<div class='producto_en_cesta'>"+
+                "<b>"+ contenido_cesta[i].unidades+"</b> "+contenido_cesta[i].nombre+" <b>"+
                 (contenido_cesta[i].unidades*contenido_cesta[i].precio).toFixed(2)+
-                "€ <button type='button' class='btn btn-danger' onclick='decrementar("+contenido_cesta[i].id+")'>X</button><br>";
+                "€ </b><button type='button' class='btn btn-danger' onclick='decrementar("+
+                contenido_cesta[i].id+")'>X</button><br></div>";
         }
     }
 }
@@ -107,7 +108,7 @@ var actualiza_total=()=>{
         total +=contenido_cesta[i].unidades*contenido_cesta[i].precio;
     }
     //una vez llegado al final del array lo imprimimos en el div total y dejamos solo dos decimales.
-    document.getElementById("total").innerHTML= total.toFixed(2)+" €"
+    document.getElementById("total").innerHTML= total.toFixed(2)+" € "
 }
 //esta función guarda el contenido de la variable contenido_cesta en el sessionStorage con el nombre de cesta_guardada.
 var guardar_cesta=()=>{  sessionStorage.setItem('cesta_guardada', JSON.stringify(contenido_cesta)); };
@@ -137,7 +138,10 @@ var recuperar_cesta=()=>{
 //  es el id del div, que coincide con el id del producto. 
   document.addEventListener("drop", drop =(event)=> {
     var data = String(event.dataTransfer.getData("plain"));
-    if (event.target.id == "cesto"){
+    console.log(event.target.className)
+    if (event.target.className == "area_cesto" || event.target.className == "area_cesto"||
+        event.target.className == "drop-section"||event.target.className == "producto_en_cesta" )
+    {
         cesta(data);
     }
   }, false);
