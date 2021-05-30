@@ -124,3 +124,24 @@ var recuperar_cesta=()=>{
         // si no hay datos de sesiones anteriores, inicializamos la array vacia.
         }else contenido_cesta=[];
   }
+
+  // DRAG AND DROP :
+
+  // se añade esta parte de codigo para que funcione todo el tema del drag and drop
+  document.addEventListener("dragover", dragover=(event)=> {
+    event.preventDefault();
+  });
+
+//creamos un listener para cuando se empieze a arrastrar guarda el ID del div en setData como "plain";
+  document.addEventListener("dragstart", dragstart=(event)=> {
+    event.dataTransfer.setData("plain",event.target.id);  
+  }, false);
+
+//  recuperamos la información con getData y si el id en el que vamos a soltar es "cesto", se ejecuta la funcion cesta(id) donde el id
+//  es el id del div, que coincide con el id del producto. 
+  document.addEventListener("drop", drop =(event)=> {
+    var data = String(event.dataTransfer.getData("plain"));
+    if (event.target.id == "cesto"){
+        cesta(data);
+    }
+  }, false);
