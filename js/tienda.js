@@ -134,13 +134,12 @@ var recuperar_cesta=()=>{
 //creamos un listener para cuando se empieze a arrastrar guarda el ID del div en setData como "plain";
   document.addEventListener("dragstart", dragstart=(event)=> event.dataTransfer.setData("plain",event.target.id));
 
-//  recuperamos la información con getData y si el id en el que vamos a soltar es "cesto", se ejecuta la funcion cesta(id) donde el id
+//  recuperamos la información con getData y si la clase coincide con area_cesto, se ejecuta la funcion cesta(id) donde el id
 //  es el id del div, que coincide con el id del producto. 
   document.addEventListener("drop", drop =(event)=> {
     var data = String(event.dataTransfer.getData("plain"));
     console.log(event.target.className)
-    if (event.target.className == "area_cesto" || event.target.className == "area_cesto"||
-        event.target.className == "drop-section"||event.target.className == "producto_en_cesta" )
+    if (event.target.className == "area_cesto" || event.target.className == "drop-section"||event.target.className == "producto_en_cesta" )
     {
         cesta(data);
     }
