@@ -138,7 +138,6 @@ var recuperar_cesta=()=>{
 //  es el id del div, que coincide con el id del producto. 
   document.addEventListener("drop", drop =(event)=> {
     var data = String(event.dataTransfer.getData("plain"));
-    console.log(event.target.className)
     if (event.target.className == "area_cesto" || event.target.className == "drop-section"||event.target.className == "producto_en_cesta" )
     {
         cesta(data);
