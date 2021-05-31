@@ -7,6 +7,7 @@ window.onload = ()=>{
 // --------------- Modificaciones -------------
 // variable que engloba a todas las imágenes
 var items = document.getElementsByClassName("items");
+var drop_section = document.getElementById("seccion_cesto");
 
 // --------------------------------
 //en esta variable estará el contenido de la cesta.
@@ -54,6 +55,8 @@ var quitar_producto=(id)=>{
             if (contenido_cesta[i].unidades < 1){
                 //si hay menos de una unidad, se elimina el objeto.
                 contenido_cesta.splice(i, 1);
+                // Si el ancho de pantalla es menor o igual a 991, reducimos altura del drop section cuando un producto se elimina
+                if(window.innerWidth <= 991)   disminuir_dropSection();
                 // si hemos eliminado el objeto, hacemos un return para que no se ejecute el resto de la función.
                 return true;
             }
@@ -83,6 +86,8 @@ var añadir_producto=(id)=>{
     //Si no encuentra coincidencia creamos un producto nuevo y lo añadimos al principio de la array contenido_cesta con .unshift()
     var productoNuevo = new Producto(id);
     contenido_cesta.unshift(productoNuevo);
+    // Si el ancho de pantalla es menor o igual a 991, aumentamos altura drop section sólo cuando hay productos nuevos en la cesta 
+    if(window.innerWidth <= 991)    aumentar_dropSection();     
 }
 
 //logica que permite imprimir la cesta en un div
@@ -129,7 +134,17 @@ var recuperar_cesta=()=>{
         contenido_cesta= JSON.parse(datos_recuperados); 
         // si no hay datos de sesiones anteriores, inicializamos la array vacia.
         }else contenido_cesta=[];
-  }
+}
+
+// aumentamos altura drop section sólo cuando hay productos nuevos en la cesta 
+var aumentar_dropSection = () => {
+    drop_section.style.height = drop_section.clientHeight + 80 + 'px';
+}
+
+// disminuimos altura drop section sólo cuando hay productos nuevos en la cesta 
+var disminuir_dropSection = () => {
+    drop_section.style.height = drop_section.clientHeight - 40 + 'px';
+}
 
   // DRAG AND DROP :
 
