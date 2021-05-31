@@ -5,6 +5,36 @@
     box-sizing: border-box;
 }
 
+hr{
+    width: 60%;
+    margin: auto;
+    
+}
+
+#zona_total{
+    margin-top:30px;
+    display:block ruby;
+    margin-left: 12px;
+}
+
+.producto_en_cesta{
+    margin-bottom: 12px    
+}
+
+
+
+#seccion_cesto{
+    text-align: center;
+}
+
+#cesto{
+    width: 150px
+}
+
+#total{
+    font-size: x-large
+}
+
 /* Variables */
 :root{
     --verde: #10da4d;
@@ -27,7 +57,7 @@ body{
     font-size: 4em;         /* 64px */
 }
 
-.btn{
+.inicio{
     padding: 10px 20px;
     background: var(--verde);
     font-family: 'Caveat Brush', cursive;
@@ -116,7 +146,7 @@ body{
 .drop-section{
     border: 5px dotted #000;
     border-radius: 20px;
-    height: 650vh;
+    height: 100%;
 }
 
 .table{
@@ -162,6 +192,12 @@ input[type=number] {
 @media screen and (max-width: 991px){
     .drop-section{
         height: 100vh;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .drop-section{
+        height: 50vh;
     }
 }
 

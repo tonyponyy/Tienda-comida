@@ -20,7 +20,7 @@
         <div>
             <h2 class="titulo-home">Welcome to our grocery store</h2>
             <div class="d-flex justify-content-center">
-                <a href="#tienda" id="_btnExlore" class="btn">Shop now</a>
+                <a href="#tienda" id="_btnExlore" class="inicio">Shop now</a>
             </div>
         </div>
     </section>
@@ -35,11 +35,11 @@
                         <div class="row">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 1 - Manzanas -->
-                                <div class="items product1 me-2" id="_product1" draggable="true"></div>   
+                                <div class="items product1 me-2" id="1" draggable="true"></div>   
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 2 - Leche -->
-                                <div class="items product2 ms-2" id="_product2" draggable="true"></div>    
+                                <div class="items product2 ms-2" id="2" draggable="true"></div>    
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -49,7 +49,7 @@
                                     <p class="text-center price">1.50€</p>
                                     <span class="description">The best apples you can find close to you.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(1)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     <p class="text-center price">1.54€</p>
                                     <span class="description">Fresh milk for our lovely and loyal customers.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(2)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -68,11 +68,11 @@
                         <div class="row mt-5">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 3 - Garbanzos -->
-                                <div class="items product3 me-2" id="_product3" draggable="true"></div>         
+                                <div class="items product3 me-2" id="3" draggable="true"></div>         
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 4 - Detergente -->
-                                <div class="items product4 ms-2" id="_product4" draggable="true"></div>         
+                                <div class="items product4 ms-2" id="4" draggable="true"></div>         
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -82,7 +82,7 @@
                                     <p class="text-center price">2.65€</p>
                                     <span class="description">Add a nutritional meal with some delicious chickpeas.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(3)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                     <p class="text-center price">1.90€</p>
                                     <span class="description">Let your kitchen shine with the most powerful cleaner.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(4)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -101,11 +101,11 @@
                         <div class="row mt-5">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 5 - Arroz -->
-                                <div class="items product5 me-2" id="_product5" draggable="true"></div>       
+                                <div class="items product5 me-2" id="5" draggable="true"></div>       
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 6 - Spaghetti -->
-                                <div class="items product6 ms-2" id="_product6" draggable="true"></div>       
+                                <div class="items product6 ms-2" id="6" draggable="true"></div>       
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -113,9 +113,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Rice</h4>
                                     <p class="text-center price">2.00€</p>
-                                    <span class="description">Add a nutritional meal with some delicious chickpeas.</span>
+                                    <span class="description">Make it nice, make it with rice.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(5)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -123,9 +123,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Spaghetti</h4>
                                     <p class="text-center price">1.40€</p>
-                                    <span class="description">Fresh milk for our lovely and loyal customers.</span>
+                                    <span class="description">Bring the flavors of Italy to your home.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(6)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -134,11 +134,11 @@
                         <div class="row mt-5">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 7 - Sandía -->
-                                <div class="items product7 me-2" id="_product7" draggable="true"></div>       
+                                <div class="items product7 me-2" id="7" draggable="true"></div>       
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 8 - Pollo -->
-                                <div class="items product8 ms-2" id="_product8" draggable="true"></div>       
+                                <div class="items product8 ms-2" id="8" draggable="true"></div>       
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -146,9 +146,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Watermelon</h4>
                                     <p class="text-center price">2.18€</p>
-                                    <span class="description">Add a nutritional meal with some delicious chickpeas.</span>
+                                    <span class="description">Add some juicy watermelons in your breakfast.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(7)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -156,9 +156,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Chicken</h4>
                                     <p class="text-center price">3.40€</p>
-                                    <span class="description">Fresh milk for our lovely and loyal customers.</span>
+                                    <span class="description">A great source of protein.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(8)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -167,11 +167,11 @@
                         <div class="row mt-5">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 9 - Sandía -->
-                                <div class="items product9 me-2" id="_product9" draggable="true"></div>       
+                                <div class="items product9 me-2" id="9" draggable="true"></div>       
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 10 - Pollo -->
-                                <div class="items product10 ms-2" id="_product10" draggable="true"></div>       
+                                <div class="items product10 ms-2" id="10" draggable="true"></div>       
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -179,9 +179,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Toilet paper</h4>
                                     <p class="text-center price">2.18€</p>
-                                    <span class="description">Add a nutritional meal with some delicious chickpeas.</span>
+                                    <span class="description">Soft and more resistant.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(9)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -189,9 +189,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Frozen pizza</h4>
                                     <p class="text-center price">3.40€</p>
-                                    <span class="description">Fresh milk for our lovely and loyal customers.</span>
+                                    <span class="description">Lazy to cook? Taste our frozen pizzas and kill the hunger.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(10)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -200,11 +200,11 @@
                         <div class="row mt-5">
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 11 - Sandía -->
-                                <div class="items product11 me-2" id="_product11" draggable="true"></div>       
+                                <div class="items product11 me-2" id="11" draggable="true"></div>       
                             </div>
                             <div class="col-6 d-flex justify-content-between">
                                 <!-- Foto producto 12 - Pollo -->
-                                <div class="items product12 ms-2" id="_product12" draggable="true"></div>       
+                                <div class="items product12 ms-2" id="12" draggable="true"></div>       
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -212,9 +212,9 @@
                                 <div class="info">
                                     <h4 class="text-center name">Eggs</h4>
                                     <p class="text-center price">2.18€</p>
-                                    <span class="description">Add a nutritional meal with some delicious chickpeas.</span>
+                                    <span class="description">The best ones brought for you.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(11)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -222,33 +222,25 @@
                                 <div class="info">
                                     <h4 class="text-center name">Flour</h4>
                                     <p class="text-center price">3.40€</p>
-                                    <span class="description">Fresh milk for our lovely and loyal customers.</span>
+                                    <span class="description">Blended with all vitamins for your health.</span>
                                     <div class="d-flex justify-content-center mt-3">
-                                        <button type="button" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
+                                        <button type="button" onclick="cesta(12)" class="comprar_btn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 order-1 order-lg-2">
-                    <section class="drop-section" id="drop-container">
-                        <h3 class="text-center titulo">My shopping list</h3>
-                        <table class="table mt-4 mx-4" id="shopping-list">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Remove item</th>
-                                </tr>
-                            </thead>
-                            <!-- Añadiremos los detalles del producto a partir de aquí desde JavaScript -->
-                            <tbody id="new_rows">
-                            </tbody>
-                        </table>
-                        <span id="total"></span>
-                    </section>
+                <div class="col-lg-5 order-1 mb-5">
+                    <div class="drop-section" id="seccion_cesto">
+                        <img src="img/carrito.svg" id="cesto" class="area_cesto"></img>
+                        <div id="lista" class="area_cesto"></div>
+                        <hr>
+                        <div id="zona_total">
+                            <span id="total" class="area_cesto"></span>    
+                            <a type='button' href='pay.html' class='btn btn-success'>Pay</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,6 +248,6 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="js/efectos.js"></script>
+    <script src="js/tienda.js"></script> 
 </body>
 </html>
