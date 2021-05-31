@@ -21,10 +21,9 @@ hr{
     margin-bottom: 12px    
 }
 
-
-
 #seccion_cesto{
     text-align: center;
+    height:  110%
 }
 
 #cesto{
@@ -90,6 +89,7 @@ body{
     outline: none;
     border-radius: 10px 10px 10px 10px;
     color: white;
+    border: none;
 }
 
 /* -- Imágenes --*/
@@ -146,7 +146,7 @@ body{
 .drop-section{
     border: 5px dotted #000;
     border-radius: 20px;
-    height: 100%;
+    height: 400vh;
 }
 
 .table{
@@ -170,12 +170,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* -- clase a añadir desde JavaScript -- */
-.sombreado{     /* añade una sombra alrededor del contenedor cuando el producto está entrando al mismo */
-    box-shadow: 10px 10px 80px 29px rgba(0,0,0,0.75);
-}
-/* -- */
-
 .drop-section .titulo{
     margin-top: 2em;
 }
@@ -191,7 +185,7 @@ input[type=number] {
 /* ------------------------ Media queries --------------------- */
 @media screen and (max-width: 991px){
     .drop-section{
-        height: 100vh;
+        height: 350px;
     }
 }
 
