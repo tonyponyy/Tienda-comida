@@ -10,6 +10,10 @@ hr{
     margin: auto;
 }
 
+h2{
+    font-size: xxx-large;
+}
+
 #zona_total{
     margin-top:30px;
     display:block ruby;
@@ -103,6 +107,11 @@ body{
     color: white;
     border: none;
 }
+
+.comprar_btn:hover{
+    background-color: #0eb941;
+}
+
 
 /* -- Imágenes --*/
 .product1{
