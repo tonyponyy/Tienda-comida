@@ -94,6 +94,7 @@ body{
     height: 227px;
     background-size: cover;
     background-position: center center;
+      box-shadow: 2px 4px rgba(0,0,0,0.1);
 }
 
 .info{
