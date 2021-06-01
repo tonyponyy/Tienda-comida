@@ -8,7 +8,10 @@
 hr{
     width: 60%;
     margin: auto;
-    
+}
+
+h2{
+    font-size: xxx-large;
 }
 
 #zona_total{
@@ -17,12 +20,27 @@ hr{
     margin-left: 12px;
 }
 
+.titulo-home {
+-webkit-text-fill-color: black;
+-webkit-text-stroke: 2px white;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+h4{
+    font-weight: bold;
+}
+
 .producto_en_cesta{
     margin-bottom: 12px    
 }
 
 #seccion_cesto{
     text-align: center;
+    height:  110%
 }
 
 #cesto{
@@ -76,6 +94,7 @@ body{
     height: 227px;
     background-size: cover;
     background-position: center center;
+      box-shadow: 2px 4px rgba(0,0,0,0.1);
 }
 
 .info{
@@ -85,10 +104,15 @@ body{
 .comprar_btn{
     padding: 0.5em 1.6em;           /* 8px 25.6px */
     background: var(--verde);
-    outline: none;
     border-radius: 10px 10px 10px 10px;
     color: white;
+    border: none;
 }
+
+.comprar_btn:hover{
+    background-color: #0eb941;
+}
+
 
 /* -- Imágenes --*/
 .product1{
@@ -168,12 +192,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* -- clase a añadir desde JavaScript -- */
-.sombreado{     /* añade una sombra alrededor del contenedor cuando el producto está entrando al mismo */
-    box-shadow: 10px 10px 80px 29px rgba(0,0,0,0.75);
-}
-/* -- */
-
 .drop-section .titulo{
     margin-top: 2em;
 }
@@ -190,6 +208,27 @@ input[type=number] {
 @media screen and (max-width: 991px){
     .drop-section{
         height: 350px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .titulo-home{
+        font-size: 3.125em;
+    }
+    .inicio{
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .titulo-home{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .title-products{
+        font-size: 35px;
     }
 }
 
@@ -211,5 +250,11 @@ input[type=number] {
 
     .comprar_btn i{
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    .title-products{
+        font-size: 25px;
     }
 }
