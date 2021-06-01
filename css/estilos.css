@@ -1,0 +1,223 @@
+/* ------------------------ Estilos Generales --------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr{
+    width: 60%;
+    margin: auto;
+}
+
+#zona_total{
+    margin-top:30px;
+    display:block ruby;
+    margin-left: 12px;
+}
+
+.titulo-home {
+-webkit-text-fill-color: black;
+-webkit-text-stroke: 2px white;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+h4{
+    font-weight: bold;
+}
+
+.producto_en_cesta{
+    margin-bottom: 12px    
+}
+
+#seccion_cesto{
+    text-align: center;
+    height:  110%
+}
+
+#cesto{
+    width: 150px
+}
+
+#total{
+    font-size: x-large
+}
+
+/* Variables */
+:root{
+    --verde: #10da4d;
+}
+
+body{
+    font-size: 16px;
+}
+
+/* ------------------------ Welcome section --------------------- */
+.home{
+    background: url('../img/homepage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.titulo-home{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 4em;         /* 64px */
+}
+
+.inicio{
+    padding: 10px 20px;
+    background: var(--verde);
+    font-family: 'Caveat Brush', cursive;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 2em;
+    border-radius: 10px 10px 10px 10px;
+}
+
+/* ------------------------ Online store --------------------- */
+.store{
+    margin-top: 6.25em;             /* 100px */
+}
+
+.items{
+    border-radius: 20px 20px 20px 20px;
+    width: 340px;
+    height: 227px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.info{
+    font-size: 1.3em;               /* 20.8px */
+}
+
+.comprar_btn{
+    padding: 0.5em 1.6em;           /* 8px 25.6px */
+    background: var(--verde);
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    border: none;
+}
+
+/* -- Imágenes --*/
+.product1{
+    background-image: url('../img/manzanas.jpg');
+}
+
+.product2{
+    background-image: url('../img/leche.jpg');
+}
+
+.product3{
+    background-image: url('../img/garbanzos.jpg');
+}
+
+.product4{
+    background-image: url('../img/detergente.jpg');
+}
+
+.product5{
+    background-image: url('../img/arroz.jpg');
+}
+
+.product6{
+    background-image: url('../img/spaguetti.jpg');
+}
+
+.product7{
+    background-image: url('../img/watermelon.jpg');
+}
+
+.product8{
+    background-image: url('../img/pollo.jpg');
+}
+
+.product9{
+    background-image: url('../img/papelHigienico.jpg');
+}
+
+.product10{
+    background-image: url('../img/pizza.jpg');
+}
+
+.product11{
+    background-image: url('../img/eggs.jpg');
+}
+
+.product12{
+    background-image: url('../img/harina.jpg');
+}
+/* ---- */
+
+/* Estilos del contenedor de la zona drop y sus elementos */
+.drop-section{
+    border: 5px dotted #000;
+    border-radius: 20px;
+    height: 400vh;
+}
+
+.table{
+    display: none;
+}
+
+.cantidad-campo{
+    width: 45px;
+}
+
+/* Removemos las flechas del campo number*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.drop-section .titulo{
+    margin-top: 2em;
+}
+
+.delete-item{
+    color: red;
+    text-decoration: none;
+}
+
+.delete-item:hover{
+    color: red;
+}
+/* ------------------------ Media queries --------------------- */
+@media screen and (max-width: 991px){
+    .drop-section{
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .items{
+        width: 40vw;
+        height: 30vh;
+    }
+
+    .name,
+    .price,
+    .description{
+        font-size: 13px;
+    }
+
+    .comprar_btn{
+        padding: 2px 20px;
+    }
+
+    .comprar_btn i{
+        font-size: 12px;
+    }
+}
